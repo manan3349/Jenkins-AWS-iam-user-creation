@@ -17,7 +17,7 @@ pipeline {
             }
         }
     }
-        // Add collaborator in github.
+        // Add IAM user in AWS and Deploying SSH Keys.
         stage('Build and Deploy') {
             steps {
                 withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'jenkins-aws-iam', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
